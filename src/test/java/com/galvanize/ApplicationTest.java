@@ -32,6 +32,12 @@ public class ApplicationTest {
         String result = outContent.toString();
         assertEquals("snuffy - Leave 0", result);
     }
+    @Test
+    public void testAdminPrintLeave(){
+        Application.main(new String[]{"admin", "all", "pl"});
+        String result = outContent.toString();
+        assertEquals("snuffy - Leave 0\nCaptain America - Leave 30\nJon Snow - Leave 0", result);
+    }
 
 
 }

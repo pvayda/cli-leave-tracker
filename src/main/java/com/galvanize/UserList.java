@@ -17,4 +17,20 @@ public class UserList {
         String leaveString = String.format("%s - Leave %s", this.getUser(name).getName(), this.getUser(name).getLeaveDays());
         return leaveString;
     }
+
+    public String printAllLeave() {
+        String allLeaveString = "";
+        int total = userMap.size();
+        int counter = 0;
+        for(String key : userMap.keySet()){
+            if(counter == total - 1){
+                allLeaveString += printUserLeave(key);
+            } else {
+                allLeaveString += printUserLeave(key) + "\n";
+                counter++;
+            }
+
+        }
+        return allLeaveString;
+    }
 }
