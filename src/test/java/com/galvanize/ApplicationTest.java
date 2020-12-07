@@ -26,6 +26,12 @@ public class ApplicationTest {
     public void restoreOut() {
         System.setOut(original);
     }
+    @Test
+    public void testPrintLeave(){
+        Application.main(new String[]{"user", "snuffy", "pl"});
+        String result = outContent.toString();
+        assertEquals("snuffy - Leave 0", result);
+    }
 
 
 }
